@@ -1,4 +1,4 @@
-package com.chuross.weathernews.api;
+package com.chuross.weathernews.infrastructure.api;
 
 public class Response {
 

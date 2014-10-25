@@ -1,4 +1,4 @@
-package com.chuross.weathernews.api;
+package com.chuross.weathernews.infrastructure.api;
 
 import net.arnx.jsonic.JSONHint;
 

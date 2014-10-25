@@ -1,4 +1,4 @@
-package com.chuross.weathernews.api;
+package com.chuross.weathernews.infrastructure.api;
 
 import com.chuross.common.library.api.GetApi;
 import com.chuross.common.library.http.HttpResponse;
