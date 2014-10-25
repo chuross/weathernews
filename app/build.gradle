@@ -10,15 +10,60 @@ android {
         targetSdkVersion 20
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "com.uphyca.testing.JUnit4InstrumentationTestRunner"
     }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java']
+            aidl.srcDirs = ['src/main/java']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['src/main/assets']
+        }
+
+        androidTest {
+            manifest.srcFile 'src/androidTest/AndroidManifest.xml'
+            java.srcDirs = ['src/androidTest/java']
+            aidl.srcDirs = ['src/androidTest/java']
+            res.srcDirs = ['src/androidTest/res']
+            assets.srcDirs = ['src/androidTest/assets']
+        }
+    }
+
     buildTypes {
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'log4j.properties'
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.google.guava:guava:17.0'
+    compile 'org.slf4j:slf4j-android:1.7.7'
+    compile('com.chuross:common-library:0.0.1-SNAPSHOT') {
+        exclude module: 'stax'
+        exclude module: 'stax-api'
+        exclude module: 'xpp3'
+        exclude module: 'slf4j-api'
+        exclude module: 'slf4j-log4j12'
+        exclude module: 'httpclient'
+        exclude module: 'httpmime'
+        exclude module: 'commons-logging'
+    }
+    compile 'org.apache.httpcomponents:httpclient-android:4.3.3'
+
+    androidTestCompile("junit:junit:4.+")
+    androidTestCompile("com.uphyca:android-junit4:0.5")
 }
