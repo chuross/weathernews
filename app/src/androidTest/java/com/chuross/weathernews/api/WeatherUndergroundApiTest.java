@@ -1,4 +1,4 @@
-package com.chuross.weathernews.infrastructure.api;
+package com.chuross.weathernews.api;
 
 import com.chuross.common.library.util.FutureUtils;
 import com.google.common.util.concurrent.MoreExecutors;

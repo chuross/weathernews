@@ -1,4 +1,4 @@
-package com.chuross.weathernews.infrastructure.api;
+package com.chuross.weathernews.api;
 
 import org.apache.http.client.config.RequestConfig;
 
