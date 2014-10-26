@@ -1,4 +1,4 @@
-package com.chuross.weathernews.infrastructure.android;
+package com.chuross.weathernews.android;
 
 import android.content.Context;
 import com.chuross.common.library.util.IOUtils;

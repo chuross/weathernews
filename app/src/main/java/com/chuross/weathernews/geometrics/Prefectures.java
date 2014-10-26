@@ -1,4 +1,4 @@
-package com.chuross.weathernews.infrastructure.geometrics;
+package com.chuross.weathernews.geometrics;
 
 import android.content.Context;
 import com.chuross.common.library.util.FutureUtils;
@@ -10,7 +10,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
 
-import static com.chuross.weathernews.infrastructure.android.AssetUtils.getResources;
+import static com.chuross.weathernews.android.AssetUtils.getResources;
 
 public class Prefectures {
 
@@ -28,14 +28,9 @@ public class Prefectures {
 
     public static List<String> getAllPrefectures(Context context) throws Exception {
         List<String> prefectures = Lists.newArrayList();
-        prefectures.addAll(getPrefectures(context, Area.HOKKAIDO));
-        prefectures.addAll(getPrefectures(context, Area.TOHOKU));
-        prefectures.addAll(getPrefectures(context, Area.KANTO));
-        prefectures.addAll(getPrefectures(context, Area.CHUBU));
-        prefectures.addAll(getPrefectures(context, Area.KINKI));
-        prefectures.addAll(getPrefectures(context, Area.CHUGOKU));
-        prefectures.addAll(getPrefectures(context, Area.SHIKOKU));
-        prefectures.addAll(getPrefectures(context, Area.KYUSHU));
+        for(Area area : Area.values()) {
+            prefectures.addAll(getPrefectures(context, area));
+        }
         return prefectures;
     }
 

@@ -1,4 +1,4 @@
-package com.chuross.weathernews.infrastructure.geometrics;
+package com.chuross.weathernews.geometrics;
 
 public enum Area {
     HOKKAIDO("北海道"),

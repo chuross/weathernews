@@ -1,8 +1,9 @@
-package com.chuross.weathernews.infrastructure.api;
+package com.chuross.weathernews.api;
 
 import com.chuross.common.library.api.result.AbstractResult;
 import org.apache.http.Header;
 
+import java.net.HttpURLConnection;
 import java.util.List;
 
 public class GeoLookupResult extends AbstractResult<GeoLookup> {
@@ -13,6 +14,6 @@ public class GeoLookupResult extends AbstractResult<GeoLookup> {
 
     @Override
     public boolean isSuccess() {
-        return getStatus() == 200 && getResult() != null && getResult().getResponse().getError() == null;
+        return getStatus() == HttpURLConnection.HTTP_OK && getResult() != null && getResult().getResponse().getError() == null;
     }
 }

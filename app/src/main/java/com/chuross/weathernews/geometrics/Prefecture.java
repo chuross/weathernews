@@ -1,4 +1,4 @@
-package com.chuross.weathernews.infrastructure.geometrics;
+package com.chuross.weathernews.geometrics;
 
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;

@@ -1,4 +1,4 @@
-package com.chuross.weathernews.infrastructure.geometrics;
+package com.chuross.weathernews.geometrics;
 
 import com.uphyca.testing.AndroidTestCase;
 import org.junit.Test;
