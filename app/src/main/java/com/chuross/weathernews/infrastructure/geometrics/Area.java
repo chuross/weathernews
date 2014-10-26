@@ -1,32 +1,21 @@
 package com.chuross.weathernews.infrastructure.geometrics;
 
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList;
-import org.simpleframework.xml.Root;
+public enum Area {
+    HOKKAIDO("北海道"),
+    TOHOKU("東北"),
+    KANTO("関東"),
+    CHUBU("中部"),
+    KINKI("近畿"),
+    CHUGOKU("中国"),
+    SHIKOKU("四国"),
+    KYUSHU("九州");
+    private String name;
 
-import java.util.List;
-
-@Root(name = "response")
-public class Area {
-
-    @ElementList(entry = "area", inline = true, empty = false)
-    private List<String> areas;
-    @Element(name = "error", required = false)
-    private String error;
-
-    public List<String> getAreas() {
-        return areas;
+    private Area(String name) {
+        this.name = name;
     }
 
-    public void setAreas(final List<String> areas) {
-        this.areas = areas;
-    }
-
-    public String getError() {
-        return error;
-    }
-
-    public void setError(final String error) {
-        this.error = error;
+    public String getName() {
+        return name;
     }
 }

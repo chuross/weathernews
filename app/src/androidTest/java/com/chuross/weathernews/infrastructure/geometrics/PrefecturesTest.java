@@ -65,7 +65,7 @@ public class PrefecturesTest extends AndroidTestCase {
 
     @Test
     public void 地域を指定して都道府県を取得できる() throws Exception {
-        List<String> prefectures = Prefectures.getPrefectures(getContext(), Prefectures.Type.KANTO);
+        List<String> prefectures = Prefectures.getPrefectures(getContext(), Area.KANTO);
         assertThat(prefectures.size(), is(7));
         assertThat(prefectures.get(0), is("茨城県"));
         assertThat(prefectures.get(1), is("栃木県"));

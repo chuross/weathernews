@@ -10,31 +10,11 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
 
-import static com.chuross.weathernews.infrastructure.geometrics.GeometricsUtils.getResources;
+import static com.chuross.weathernews.infrastructure.android.AssetUtils.getResources;
 
 public class Prefectures {
 
     private Prefectures() {
-    }
-
-    public static enum Type {
-        HOKKAIDO("北海道"),
-        TOHOKU("東北"),
-        KANTO("関東"),
-        CHUBU("中部"),
-        KINKI("近畿"),
-        CHUGOKU("中国"),
-        SHIKOKU("四国"),
-        KYUSHU("九州");
-        private String name;
-
-        private Type(String name) {
-            this.name = name;
-        }
-
-        public String getName() {
-            return name;
-        }
     }
 
     public static Future<List<String>> getAllPrefectures(Executor executor, final Context context) {
@@ -48,28 +28,28 @@ public class Prefectures {
 
     public static List<String> getAllPrefectures(Context context) throws Exception {
         List<String> prefectures = Lists.newArrayList();
-        prefectures.addAll(getPrefectures(context, Type.HOKKAIDO));
-        prefectures.addAll(getPrefectures(context, Type.TOHOKU));
-        prefectures.addAll(getPrefectures(context, Type.KANTO));
-        prefectures.addAll(getPrefectures(context, Type.CHUBU));
-        prefectures.addAll(getPrefectures(context, Type.KINKI));
-        prefectures.addAll(getPrefectures(context, Type.CHUGOKU));
-        prefectures.addAll(getPrefectures(context, Type.SHIKOKU));
-        prefectures.addAll(getPrefectures(context, Type.KYUSHU));
+        prefectures.addAll(getPrefectures(context, Area.HOKKAIDO));
+        prefectures.addAll(getPrefectures(context, Area.TOHOKU));
+        prefectures.addAll(getPrefectures(context, Area.KANTO));
+        prefectures.addAll(getPrefectures(context, Area.CHUBU));
+        prefectures.addAll(getPrefectures(context, Area.KINKI));
+        prefectures.addAll(getPrefectures(context, Area.CHUGOKU));
+        prefectures.addAll(getPrefectures(context, Area.SHIKOKU));
+        prefectures.addAll(getPrefectures(context, Area.KYUSHU));
         return prefectures;
     }
 
-    public static Future<List<String>> getPrefectures(Executor executor, final Context context, final Type type) {
+    public static Future<List<String>> getPrefectures(Executor executor, final Context context, final Area area) {
         return FutureUtils.executeOrNull(executor, new Callable<List<String>>() {
             @Override
             public List<String> call() throws Exception {
-                return getPrefectures(context, type);
+                return getPrefectures(context, area);
             }
         });
     }
 
-    public static List<String> getPrefectures(Context context, Type type) throws Exception {
-        switch(type) {
+    public static List<String> getPrefectures(Context context, Area area) throws Exception {
+        switch(area) {
             case HOKKAIDO:
                 return getResources(context, Prefecture.class, "prefecture_hokkaido.xml", getPrefectureConvertFunction());
             case TOHOKU:

@@ -1,4 +1,4 @@
-package com.chuross.weathernews.infrastructure.geometrics;
+package com.chuross.weathernews.infrastructure.android;
 
 import android.content.Context;
 import com.chuross.common.library.util.IOUtils;
@@ -10,9 +10,9 @@ import org.apache.commons.lang3.StringUtils;
 import java.nio.charset.Charset;
 import java.util.List;
 
-public class GeometricsUtils {
+public class AssetUtils {
 
-    private GeometricsUtils() {
+    private AssetUtils() {
     }
 
     public static <T> List<String> getResources(Context context, Class<T> clazz, String filePath, Function<T, List<String>> convertFunction) throws Exception {
