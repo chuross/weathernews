@@ -15,7 +15,7 @@ public class AssetUtils {
     private AssetUtils() {
     }
 
-    public static <T> List<String> getResources(Context context, Class<T> clazz, String filePath, Function<T, List<String>> convertFunction) throws Exception {
+    public static <T> List<String> readXmlResources(Context context, Class<T> clazz, String filePath, Function<T, List<String>> convertFunction) throws Exception {
         if(context == null || clazz == null || StringUtils.isBlank(filePath) || convertFunction == null) {
             return Lists.newArrayList();
         }
