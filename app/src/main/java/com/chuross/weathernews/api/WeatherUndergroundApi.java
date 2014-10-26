@@ -12,11 +12,11 @@ public class WeatherUndergroundApi {
     private static final RequestConfig CONFIG = RequestConfig.custom().setConnectTimeout(TIME_OUT).setSocketTimeout(TIME_OUT).build();
     private static final int RETRY_COUNT = 3;
 
-    public Future<GeoLookupResult> geoLookup(Executor executor, String query) {
-        return new GeoLookupApi(query).execute(executor, CONFIG, RETRY_COUNT);
-    }
-
     public Future<GeoLookupResult> geoLookup(Executor executor, Location location) {
         return new GeoLookupApi(location).execute(executor, CONFIG, RETRY_COUNT);
+    }
+
+    public Future<ForecastListResult> forecastList(Executor executor, Location location) {
+        return new ForecastListApi(location).execute(executor, CONFIG, RETRY_COUNT);
     }
 }

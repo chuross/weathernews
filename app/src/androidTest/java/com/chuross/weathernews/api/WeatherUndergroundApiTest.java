@@ -6,8 +6,13 @@ import com.uphyca.testing.AndroidTestCase;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.junit.Assert.assertThat;
 
 public class WeatherUndergroundApiTest extends AndroidTestCase {
@@ -17,17 +22,6 @@ public class WeatherUndergroundApiTest extends AndroidTestCase {
     @Before
     public void before() {
         api = new WeatherUndergroundApi();
-    }
-
-    @Test
-    public void 都市の名前から座標を取得できる() {
-        GeoLookupResult result = FutureUtils.getOrNull(api.geoLookup(MoreExecutors.sameThreadExecutor(), "Tokyo"));
-        assertThat(result.isSuccess(), is(true));
-        assertThat(result.getResult().getResponse().getError(), nullValue());
-        Location location = result.getResult().getLocation();
-        assertThat(location.getName(), is("Tokyo"));
-        assertThat(location.getLatitude(), is("35.54999924"));
-        assertThat(location.getLongitude(), is("139.77999878"));
     }
 
     @Test
@@ -41,5 +35,22 @@ public class WeatherUndergroundApiTest extends AndroidTestCase {
         assertThat(resultLocation.getName(), is("Ota"));
         assertThat(resultLocation.getLatitude(), is("35.540000"));
         assertThat(resultLocation.getLongitude(), is("139.770000"));
+    }
+
+    @Test
+    public void 緯度経度から天気の情報リストを取得できる() {
+        Location location = new Location("35.54999924", "139.77999878");
+        ForecastListResult result = FutureUtils.getOrNull(api.forecastList(MoreExecutors.sameThreadExecutor(), location));
+        assertThat(result.isSuccess(), is(true));
+        assertThat(result.getResult().getResponse().getError(), nullValue());
+        List<Forecastday> forecastdays = result.getResult().getForecast().getSimpleForecast().getForecastdays();
+        assertThat(forecastdays.size(), greaterThan(0));
+        Forecastday forecastday = forecastdays.get(0);
+        assertThat(forecastday.getConditions(), notNullValue());
+        assertThat(forecastday.getDate(), notNullValue());
+        assertThat(forecastday.getIconUrl(), notNullValue());
+        assertThat(forecastday.getHigh(), notNullValue());
+        assertThat(forecastday.getLow(), notNullValue());
+        assertThat(forecastday.getPop(), greaterThanOrEqualTo(0));
     }
 }
