@@ -11,5 +11,7 @@ allprojects {
     repositories {
         jcenter()
         maven { url 'http://chuross.github.com/maven-repository/' }
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url 'https://github.com/felipecsl/m2repository/raw/master/' }
     }
 }

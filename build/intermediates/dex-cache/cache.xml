@@ -2,17 +2,17 @@
 <pre-dex-items>
 
     <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/guava-17.0-32b3795ae3748e619dd48ad7e41bfaf07b0ddf7a.jar"
-        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/17.0/9c6ef172e8de35fd8d4d8783e4821e57cdef7445/guava-17.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="9c6ef172e8de35fd8d4d8783e4821e57cdef7445"/>
-    <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/slf4j-api-1.7.7-bb0dedd44771d5faf3d95cd8890200777a7826d9.jar"
         jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.7/2b8019b6249bb05d81d3a3094e468753e2b21311/slf4j-api-1.7.7.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="2b8019b6249bb05d81d3a3094e468753e2b21311"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/classes-fc9d3ef01054d032218c959f053d7a81601ee1a2.jar"
+        jar="/home/chuross/workspace/WeatherNews/app/build/intermediates/exploded-aar/se.emilsjolander/stickylistheaders/2.5.2/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9f0808c3f609d8fe93018a8108d5a3d7c9cb5458"/>
     <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/simple-xml-2.7.1-ed3346eec545a4349be10a4499a9000a93a4d4da.jar"
         jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.simpleframework/simple-xml/2.7.1/dd91fb744c2ff921407475cb29a1e3fee397d411/simple-xml-2.7.1.jar"
@@ -26,65 +26,17 @@
         revision="20.0.0"
         sha1="2548cc22d36a7cdea954f9842fed88841131dd82"/>
     <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/commons-io-2.4-d8db6c00f9ca4e08e1e70fa8f6387c93ddec1b90.jar"
-        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad"/>
-    <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/test/debug/hamcrest-core-1.3-13952fb1fa33b5ee897ff9302a348762541f79c9.jar"
-        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="42a25dc3219429f0e5d060061f71acb49bf010a0"/>
-    <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/httpclient-android-4.3.3-507b84d8aed4747d93b861003d837b32d013249e.jar"
-        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient-android/4.3.3/39ba75b570e5f1535356e8a1bf920b1c6cc83a9a/httpclient-android-4.3.3.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="39ba75b570e5f1535356e8a1bf920b1c6cc83a9a"/>
-    <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/commons-collections-3.2.1-de26be7897468cbee869fa48c78c38db62283fa2.jar"
-        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="761ea405b9b37ced573d2df0d1e3a4e0f9edc668"/>
-    <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/jdeferred-core-1.2.1-30ae03082fc157eb8ce79f17255833e14cc527be.jar"
-        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.jdeferred/jdeferred-core/1.2.1/6d3a631d870d5dc3053b3fcdd2c050ed9de5ba53/jdeferred-core-1.2.1.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="6d3a631d870d5dc3053b3fcdd2c050ed9de5ba53"/>
-    <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/test/debug/android-junit4-0.5-de8cbacea8dfe6942633b50e0c246ce313b14404.jar"
-        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/com.uphyca/android-junit4/0.5/bd460a126281dba73c780aaeb80ca30e4e800605/android-junit4-0.5.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="bd460a126281dba73c780aaeb80ca30e4e800605"/>
-    <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/jsonic-1.3.5-cf22e1329ba666825a14193f78c81f0922f03419.jar"
         jar="/home/chuross/.gradle/caches/modules-2/files-2.1/net.arnx/jsonic/1.3.5/5eb7383a510066cded3b2c5f9e58493427b2fd3/jsonic-1.3.5.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="05eb7383a510066cded3b2c5f9e58493427b2fd3"/>
     <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/test/debug/junit-4.12-beta-2-bed1d34d5264cf062305428c2cf6e5094a0341ac.jar"
-        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/junit/junit/4.12-beta-2/eb899c93c162058b6ae990e7e279507803edd1fb/junit-4.12-beta-2.jar"
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/aopalliance-1.0-81584a43487ff8c713d2a8766e17e0a20f9b6245.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="eb899c93c162058b6ae990e7e279507803edd1fb"/>
-    <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/slf4j-android-1.7.7-0e3ace6456e1e18ebf7f244e998e3788327e0cae.jar"
-        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-android/1.7.7/f1c194a0753f5005eb57d69bccc7091460edd15a/slf4j-android-1.7.7.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="f1c194a0753f5005eb57d69bccc7091460edd15a"/>
-    <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/test/debug/hamcrest-library-1.3-a8760fb05be5f9b3f7cd253ac90feb99164036d9.jar"
-        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/4785a3c21320980282f9f33d0d1264a69040538f/hamcrest-library-1.3.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="4785a3c21320980282f9f33d0d1264a69040538f"/>
+        sha1="0235ba8b489512805ac13a8f9ea77a1ca5ebe3e8"/>
     <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/commons-lang3-3.3.2-6949636efe7a565b9a5549fa31d1f3ba6aa0a415.jar"
         jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.3.2/90a3822c38ec8c996e84c16a3477ef632cbc87a3/commons-lang3-3.3.2.jar"
@@ -92,10 +44,118 @@
         revision="20.0.0"
         sha1="90a3822c38ec8c996e84c16a3477ef632cbc87a3"/>
     <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/classes-fe8d5e7409f5d7d596e3d706edee2e08e29807f3.jar"
+        jar="/home/chuross/workspace/WeatherNews/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/guava-17.0-32b3795ae3748e619dd48ad7e41bfaf07b0ddf7a.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/17.0/9c6ef172e8de35fd8d4d8783e4821e57cdef7445/guava-17.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9c6ef172e8de35fd8d4d8783e4821e57cdef7445"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/activeandroid-3.1.0-SNAPSHOT-52aed169461b35c473ea02dbceaf9c11c887a27e.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/com.michaelpardo/activeandroid/3.1.0-SNAPSHOT/4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08/activeandroid-3.1.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/commons-collections-3.2.1-de26be7897468cbee869fa48c78c38db62283fa2.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="761ea405b9b37ced573d2df0d1e3a4e0f9edc668"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/classes-2e77c1e4c99fa571e0efa2efd074bd98700afa5f.jar"
+        jar="/home/chuross/workspace/WeatherNews/app/build/intermediates/exploded-aar/com.felipecsl/quickreturn/1.4.0-a/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="c094fb2f7bbc0e695a42b09dab6cb3363174be9d"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/roboguice-2.0-4a03d6a8275e0db3f9eb37d447753f4b2fab4dc5.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.roboguice/roboguice/2.0/727ccb8f376109d0b5c44abca6f791dccc5c5dbc/roboguice-2.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="727ccb8f376109d0b5c44abca6f791dccc5c5dbc"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-5f71a8508d3a9ea6e6df1f12e283db60c487a998.jar"
+        jar="/home/chuross/workspace/WeatherNews/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/commons-io-2.4-d8db6c00f9ca4e08e1e70fa8f6387c93ddec1b90.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.4/b1b6ea3b7e4aa4f492509a4952029cd8e48019ad/commons-io-2.4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/classes-2567330e706605e408417b2c5f28d5c86b2cffb8.jar"
+        jar="/home/chuross/workspace/WeatherNews/app/build/intermediates/exploded-aar/org.jdeferred/jdeferred-android-aar/1.2.3/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="d11696bc936ed5e1ce2f8b1b0915b18eea3c088d"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/httpclient-android-4.3.3-507b84d8aed4747d93b861003d837b32d013249e.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpclient-android/4.3.3/39ba75b570e5f1535356e8a1bf920b1c6cc83a9a/httpclient-android-4.3.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="39ba75b570e5f1535356e8a1bf920b1c6cc83a9a"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/classes-a61897fa15ee4adfc728f97fd141d556cb6ba98e.jar"
+        jar="/home/chuross/workspace/WeatherNews/app/build/intermediates/exploded-aar/com.chuross/android-common-library/0.0.1-SNAPSHOT/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="2fa57001add00cffb719602c96406d1eef002841"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/cglib-2.2.1-v20090111-aa30819357fc892cf08a575d8e63a8f411c94069.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.sonatype.sisu.inject/cglib/2.2.1-v20090111/7ce5e983fd0e6c78346f4c9cbfa39d83049dda2/cglib-2.2.1-v20090111.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="07ce5e983fd0e6c78346f4c9cbfa39d83049dda2"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/slf4j-android-1.7.7-0e3ace6456e1e18ebf7f244e998e3788327e0cae.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-android/1.7.7/f1c194a0753f5005eb57d69bccc7091460edd15a/slf4j-android-1.7.7.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f1c194a0753f5005eb57d69bccc7091460edd15a"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/guice-3.0-no_aop-b2a9e352dd0c397c686532f8a2781892d86a1202.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/3.0/28586dc97c525501329d9a242fc3402041e3572d/guice-3.0-no_aop.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="28586dc97c525501329d9a242fc3402041e3572d"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-afa5711b3377a173dd9ae673381ccceadc271346.jar"
+        jar="/usr/local/android-sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/commons-beanutils-1.9.2-39c0e520212d50d88eee418f854c52c1e9f06b8b.jar"
         jar="/home/chuross/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.9.2/7a87d845ad3a155297e8f67d9008f4c1e5656b71/commons-beanutils-1.9.2.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="7a87d845ad3a155297e8f67d9008f4c1e5656b71"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/jdeferred-core-1.2.3-b81659b39a31fa91643f829c01cb0ee87ce331e0.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.jdeferred/jdeferred-core/1.2.3/f6723c14355ab64c62a4460fbc74a44fe017ad2c/jdeferred-core-1.2.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f6723c14355ab64c62a4460fbc74a44fe017ad2c"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/asm-3.1-7b0a9bcd96a3e4ae718472a79436595fee43785e.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/asm/asm/3.1/c157def142714c544bdea2e6144645702adf7097/asm-3.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="c157def142714c544bdea2e6144645702adf7097"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/javax.inject-1-35c79d73e5af60affeb778a61cbf7c280b88d61d.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38"/>
 
 </pre-dex-items>

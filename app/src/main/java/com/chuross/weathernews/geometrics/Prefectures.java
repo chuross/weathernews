@@ -10,7 +10,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
 
-import static com.chuross.weathernews.android.AssetUtils.readXmlResources;
+import static com.chuross.weathernews.android.AssetUtils.readXmlResourcesOrNull;
 
 public class Prefectures {
 
@@ -43,24 +43,24 @@ public class Prefectures {
         });
     }
 
-    public static List<String> getPrefectures(Context context, Area area) throws Exception {
+    public static List<String> getPrefectures(Context context, Area area) {
         switch(area) {
             case HOKKAIDO:
-                return readXmlResources(context, Prefecture.class, "prefecture_hokkaido.xml", getPrefectureConvertFunction());
+                return readXmlResourcesOrNull(context, Prefecture.class, "prefecture_hokkaido.xml", getPrefectureConvertFunction());
             case TOHOKU:
-                return readXmlResources(context, Prefecture.class, "prefecture_tohoku.xml", getPrefectureConvertFunction());
+                return readXmlResourcesOrNull(context, Prefecture.class, "prefecture_tohoku.xml", getPrefectureConvertFunction());
             case KANTO:
-                return readXmlResources(context, Prefecture.class, "prefecture_kanto.xml", getPrefectureConvertFunction());
+                return readXmlResourcesOrNull(context, Prefecture.class, "prefecture_kanto.xml", getPrefectureConvertFunction());
             case CHUBU:
-                return readXmlResources(context, Prefecture.class, "prefecture_chubu.xml", getPrefectureConvertFunction());
+                return readXmlResourcesOrNull(context, Prefecture.class, "prefecture_chubu.xml", getPrefectureConvertFunction());
             case KINKI:
-                return readXmlResources(context, Prefecture.class, "prefecture_kinki.xml", getPrefectureConvertFunction());
+                return readXmlResourcesOrNull(context, Prefecture.class, "prefecture_kinki.xml", getPrefectureConvertFunction());
             case CHUGOKU:
-                return readXmlResources(context, Prefecture.class, "prefecture_chugoku.xml", getPrefectureConvertFunction());
+                return readXmlResourcesOrNull(context, Prefecture.class, "prefecture_chugoku.xml", getPrefectureConvertFunction());
             case SHIKOKU:
-                return readXmlResources(context, Prefecture.class, "prefecture_shikoku.xml", getPrefectureConvertFunction());
+                return readXmlResourcesOrNull(context, Prefecture.class, "prefecture_shikoku.xml", getPrefectureConvertFunction());
             case KYUSHU:
-                return readXmlResources(context, Prefecture.class, "prefecture_kyushu.xml", getPrefectureConvertFunction());
+                return readXmlResourcesOrNull(context, Prefecture.class, "prefecture_kyushu.xml", getPrefectureConvertFunction());
             default:
                 throw new IllegalArgumentException("invalid type.");
         }

@@ -15,4 +15,8 @@ public class GeometryResult {
     public void setGeometry(final Geometry geometry) {
         this.geometry = geometry;
     }
+
+    public static GeometryLocation getLocation(GeometryResult geometryResult) {
+        return geometryResult != null && geometryResult.getGeometry() != null ? geometryResult.getGeometry().getLocation() : null;
+    }
 }

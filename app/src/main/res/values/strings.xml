@@ -4,5 +4,9 @@
     <string name="app_name">WeatherNews</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string-array name="location_add_menu">
+        <item>地域から追加する</item>
+        <item>現在位置から追加する</item>
+    </string-array>
 
 </resources>
