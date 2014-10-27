@@ -9,9 +9,10 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        maven { url "http://dl.bintray.com/populov/maven" }
         maven { url 'http://chuross.github.com/maven-repository/' }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url 'https://github.com/felipecsl/m2repository/raw/master/' }
+        jcenter()
     }
 }

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/BaseHorizontalLayout">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:background="@android:color/white">
+        <TextView
+            android:id="@+id/today_date_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:gravity="center_horizontal" />
+        <RelativeLayout
+            android:id="@+id/temperature_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="120dp">
+            <ImageView
+                android:id="@+id/weather_icon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginRight="16dp" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/weather_icon"
+                android:layout_centerVertical="true">
+                <TextView
+                    android:id="@+id/temperature_max"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="32sp" />
+                <TextView
+                    android:id="@+id/temperature_max_celsius"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/temperature_max"
+                    android:layout_marginTop="12sp"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="20sp" />
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="1dp"
+                    android:layout_height="32sp"
+                    android:layout_marginTop="8sp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toRightOf="@+id/temperature_max_celsius"
+                    android:background="@android:color/darker_gray" />
+                <TextView
+                    android:id="@+id/temperature_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/divider"
+                    android:textColor="@android:color/holo_blue_bright"
+                    android:textSize="32sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/temperature_min"
+                    android:layout_marginTop="12sp"
+                    android:textColor="@android:color/holo_blue_bright"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/pop_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/temperature_max"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/holo_blue_dark" />
+                <TextView
+                    android:id="@+id/conditions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pop_text"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/below_shadow" />
+    <TableLayout
+        android:id="@+id/forecast_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:stretchColumns="0,1,2"
+        android:background="@android:color/white" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@drawable/below_shadow" />
+</LinearLayout>

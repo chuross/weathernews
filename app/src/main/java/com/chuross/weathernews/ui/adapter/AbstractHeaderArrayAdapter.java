@@ -1,4 +1,4 @@
-package com.chuross.weathernews.ui;
+package com.chuross.weathernews.ui.adapter;
 
 import android.content.Context;
 import android.view.View;

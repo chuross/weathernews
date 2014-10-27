@@ -1,4 +1,4 @@
-package com.chuross.weathernews.ui;
+package com.chuross.weathernews.ui.activity;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.SearchView;
 import com.chuross.weathernews.R;
 import com.chuross.weathernews.api.*;
+import com.chuross.weathernews.geometrics.GeometricsConverter;
+import com.chuross.weathernews.ui.adapter.SimpleStickyListHeadersAdapter;
 import com.chuross.weathernews.util.DateProvider;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Collections2;
@@ -139,7 +141,7 @@ public class CityChooseActivity extends Activity {
     }
 
     private void executeGeoLookup(GeometryLocation location) {
-        Future<GeoLookupResult> future = weatherUndergroundApi.geoLookup(AsyncTask.THREAD_POOL_EXECUTOR, GeometricsUtils.convertLocation(location));
+        Future<GeoLookupResult> future = weatherUndergroundApi.geoLookup(AsyncTask.THREAD_POOL_EXECUTOR, GeometricsConverter.convertLocation(location));
         execute(AsyncTask.SERIAL_EXECUTOR, future, AndroidExecutionScope.UI).done(new DoneCallback<GeoLookupResult>() {
             @Override
             public void onDone(final GeoLookupResult result) {

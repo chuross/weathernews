@@ -38,23 +38,29 @@
         revision="20.0.0"
         sha1="0235ba8b489512805ac13a8f9ea77a1ca5ebe3e8"/>
     <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/commons-lang3-3.3.2-6949636efe7a565b9a5549fa31d1f3ba6aa0a415.jar"
-        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.3.2/90a3822c38ec8c996e84c16a3477ef632cbc87a3/commons-lang3-3.3.2.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="90a3822c38ec8c996e84c16a3477ef632cbc87a3"/>
-    <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/classes-fe8d5e7409f5d7d596e3d706edee2e08e29807f3.jar"
         jar="/home/chuross/workspace/WeatherNews/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
     <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/commons-lang3-3.3.2-6949636efe7a565b9a5549fa31d1f3ba6aa0a415.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.3.2/90a3822c38ec8c996e84c16a3477ef632cbc87a3/commons-lang3-3.3.2.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="90a3822c38ec8c996e84c16a3477ef632cbc87a3"/>
+    <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/guava-17.0-32b3795ae3748e619dd48ad7e41bfaf07b0ddf7a.jar"
         jar="/home/chuross/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/17.0/9c6ef172e8de35fd8d4d8783e4821e57cdef7445/guava-17.0.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="9c6ef172e8de35fd8d4d8783e4821e57cdef7445"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/picasso-2.3.4-000a82bf7d96b74a20babe69b5a7b01c9cb80337.jar"
+        jar="/home/chuross/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.3.4/3b646ddbdac8a33fc45b64564011da81d23e4635/picasso-2.3.4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3b646ddbdac8a33fc45b64564011da81d23e4635"/>
     <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/activeandroid-3.1.0-SNAPSHOT-52aed169461b35c473ea02dbceaf9c11c887a27e.jar"
         jar="/home/chuross/.gradle/caches/modules-2/files-2.1/com.michaelpardo/activeandroid/3.1.0-SNAPSHOT/4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08/activeandroid-3.1.0-SNAPSHOT.jar"
@@ -67,12 +73,6 @@
         jumboMode="false"
         revision="20.0.0"
         sha1="761ea405b9b37ced573d2df0d1e3a4e0f9edc668"/>
-    <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/classes-2e77c1e4c99fa571e0efa2efd074bd98700afa5f.jar"
-        jar="/home/chuross/workspace/WeatherNews/app/build/intermediates/exploded-aar/com.felipecsl/quickreturn/1.4.0-a/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="c094fb2f7bbc0e695a42b09dab6cb3363174be9d"/>
     <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/roboguice-2.0-4a03d6a8275e0db3f9eb37d447753f4b2fab4dc5.jar"
         jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.roboguice/roboguice/2.0/727ccb8f376109d0b5c44abca6f791dccc5c5dbc/roboguice-2.0.jar"
@@ -151,6 +151,12 @@
         jumboMode="false"
         revision="20.0.0"
         sha1="c157def142714c544bdea2e6144645702adf7097"/>
+    <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/classes-b86ff5ddeafdd992dbd16d2a04e2135be8a6f0e2.jar"
+        jar="/home/chuross/workspace/WeatherNews/app/build/intermediates/exploded-aar/com.viewpagerindicator/library/2.4.1/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="88e8e18d365173ad04a543d76c157e0b644f0b3f"/>
     <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/javax.inject-1-35c79d73e5af60affeb778a61cbf7c280b88d61d.jar"
         jar="/home/chuross/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"

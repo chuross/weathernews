@@ -1,4 +1,4 @@
-package com.chuross.weathernews.ui;
+package com.chuross.weathernews.ui.activity;
 
 import com.chuross.common.library.util.FutureUtils;
 import com.chuross.common.library.util.PromiseUtils;

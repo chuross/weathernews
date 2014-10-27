@@ -1,4 +1,4 @@
-package com.chuross.weathernews.ui;
+package com.chuross.weathernews.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import com.chuross.weathernews.R;
+import com.chuross.weathernews.ui.adapter.SimpleListAdapter;
 import roboguice.inject.InjectView;
 
 public class LocationAddActivity extends Activity {

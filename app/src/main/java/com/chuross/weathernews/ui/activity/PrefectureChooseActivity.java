@@ -1,4 +1,4 @@
-package com.chuross.weathernews.ui;
+package com.chuross.weathernews.ui.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,6 +6,7 @@ import android.widget.AdapterView;
 import com.chuross.weathernews.R;
 import com.chuross.weathernews.geometrics.Area;
 import com.chuross.weathernews.geometrics.Prefectures;
+import com.chuross.weathernews.ui.adapter.SimpleStickyListHeadersAdapter;
 import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.ListMultimap;
 import roboguice.inject.InjectView;

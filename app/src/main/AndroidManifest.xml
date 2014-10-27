@@ -12,15 +12,22 @@
         <meta-data android:name="AA_DB_NAME" android:value="WeatherNews.db" />
         <meta-data android:name="AA_DB_VERSION" android:value="1" />
         <activity
-            android:name=".ui.MainActivity"
-            android:label="@string/app_name">
+            android:name=".ui.activity.MainActivity"
+            android:label="@string/app_name"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.LocationAddActivity" />
-        <activity android:name=".ui.PrefectureChooseActivity" />
-        <activity android:name=".ui.CityChooseActivity" />
+        <activity
+            android:name=".ui.activity.LocationAddActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".ui.activity.PrefectureChooseActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".ui.activity.CityChooseActivity"
+            android:configChanges="orientation|screenSize" />
     </application>
 </manifest>
