@@ -1,5 +1,6 @@
 package com.chuross.weathernews.ui.activity;
 
+import android.widget.Toast;
 import com.chuross.common.library.util.FutureUtils;
 import com.chuross.common.library.util.PromiseUtils;
 import com.google.common.collect.Lists;
@@ -50,6 +51,10 @@ public class Activity extends RoboFragmentActivity {
             cancel(future);
         }
         futures.clear();
+    }
+
+    public void showToast(String message, int length) {
+        Toast.makeText(this, message, length).show();
     }
 
     @Override

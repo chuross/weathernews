@@ -13,4 +13,7 @@
     <include
         android:id="@+id/progress"
         layout="@layout/parts_progress" />
+    <include
+        android:id="@+id/error"
+        layout="@layout/parts_error" />
 </RelativeLayout>

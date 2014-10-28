@@ -35,6 +35,8 @@ public class ForecastFragment extends Fragment {
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MM/dd(E)");
     @InjectView(R.id.progress)
     private View progress;
+    @InjectView(R.id.error)
+    private View error;
     @InjectView(R.id.today_date_text)
     private TextView todayDateTextView;
     @InjectView(R.id.weather_icon)
@@ -69,7 +71,7 @@ public class ForecastFragment extends Fragment {
         initView();
         long id = getArguments().getLong(ARGUMENT_KEY_IDENTITY, -1);
         if(id == -1) {
-            // TODO error
+            error.setVisibility(View.VISIBLE);
             return;
         }
         Location location = Location.load(Location.class, id);
@@ -82,7 +84,7 @@ public class ForecastFragment extends Fragment {
         }).fail(new FailCallback<Throwable>() {
             @Override
             public void onFail(final Throwable result) {
-                //TODO error
+                error.setVisibility(View.VISIBLE);
             }
         }).always(new AlwaysCallback<ForecastListResult, Throwable>() {
             @Override
@@ -127,6 +129,7 @@ public class ForecastFragment extends Fragment {
     }
 
     private void initView() {
+        error.setVisibility(View.INVISIBLE);
         todayDateTextView.setText(null);
         temperatureMaxView.setText(null);
         temperatureMinView.setText(null);

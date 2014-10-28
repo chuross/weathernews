@@ -4,9 +4,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.SearchView;
+import android.widget.Toast;
 import com.chuross.weathernews.R;
 import com.chuross.weathernews.api.*;
 import com.chuross.weathernews.geometrics.GeometricsConverter;
@@ -19,8 +18,10 @@ import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import org.apache.commons.lang3.StringUtils;
+import org.jdeferred.AlwaysCallback;
 import org.jdeferred.DoneCallback;
 import org.jdeferred.FailCallback;
+import org.jdeferred.Promise;
 import org.jdeferred.android.AndroidExecutionScope;
 import roboguice.inject.InjectView;
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
@@ -32,10 +33,8 @@ import java.util.concurrent.Future;
 public class CityChooseActivity extends Activity {
 
     private static final String EXTRA_KEY_PREFECTURE = "extra_key_prefecture";
-    @InjectView(R.id.search_layout)
-    private View searchlayout;
-    @InjectView(R.id.search)
-    private SearchView searchView;
+    @InjectView(R.id.progress)
+    private View progress;
     @InjectView(R.id.list)
     private StickyListHeadersListView listView;
     @Inject
@@ -53,7 +52,6 @@ public class CityChooseActivity extends Activity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_city_choose);
         final String prefecture = getIntent().getStringExtra(EXTRA_KEY_PREFECTURE);
         adapter = new SimpleStickyListHeadersAdapter<String, City>(getApplicationContext()) {
@@ -83,6 +81,11 @@ public class CityChooseActivity extends Activity {
         }).fail(new FailCallback<Throwable>() {
             @Override
             public void onFail(final Throwable result) {
+            }
+        }).always(new AlwaysCallback<CityResult, Throwable>() {
+            @Override
+            public void onAlways(final Promise.State state, final CityResult resolved, final Throwable rejected) {
+                progress.setVisibility(View.INVISIBLE);
             }
         });
     }
@@ -116,6 +119,7 @@ public class CityChooseActivity extends Activity {
     }
 
     private void registerLocation(City city, String prefecture) {
+        progress.setVisibility(View.VISIBLE);
         Future<GeocodeResult> future = geometricsApi.geocode(AsyncTask.THREAD_POOL_EXECUTOR, StringUtils.join(prefecture, city.getName()));
         execute(AsyncTask.SERIAL_EXECUTOR, future, AndroidExecutionScope.UI).done(new DoneCallback<GeocodeResult>() {
             @Override
@@ -125,7 +129,8 @@ public class CityChooseActivity extends Activity {
         }).fail(new FailCallback<Throwable>() {
             @Override
             public void onFail(final Throwable result) {
-                // TODO
+                progress.setVisibility(View.INVISIBLE);
+                showToast("市町村の取得に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
             }
         });
     }
@@ -133,7 +138,7 @@ public class CityChooseActivity extends Activity {
     private void onGeocodeDone(GeocodeResult result) {
         List<GeometryResult> list = result.getResult().getGeometryResults();
         if(list.isEmpty()) {
-            // TODO display error
+            showToast("観測地点の追加に失敗しました。時間を置いて再度お試しいただくか、違う市町村を選択してください。", Toast.LENGTH_LONG);
         } else {
             executeGeoLookup(GeometryResult.getLocation(list.get(0)));
         }
@@ -149,7 +154,7 @@ public class CityChooseActivity extends Activity {
         }).fail(new FailCallback<Throwable>() {
             @Override
             public void onFail(final Throwable result) {
-                // TODO
+                showToast("観測地点の追加に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
             }
         });
     }
@@ -163,7 +168,7 @@ public class CityChooseActivity extends Activity {
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         } else {
-            // TODO display error
+            showToast("観測地点の追加に失敗しました。既に選択した市町村が追加されている可能性があります。", Toast.LENGTH_LONG);
         }
     }
 }

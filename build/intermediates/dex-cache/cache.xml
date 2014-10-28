@@ -108,7 +108,7 @@
         jar="/home/chuross/workspace/WeatherNews/app/build/intermediates/exploded-aar/com.chuross/android-common-library/0.0.1-SNAPSHOT/classes.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="2fa57001add00cffb719602c96406d1eef002841"/>
+        sha1="ac5d1dcc5b28bfa8892af4343430555df47e5c5c"/>
     <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/cglib-2.2.1-v20090111-aa30819357fc892cf08a575d8e63a8f411c94069.jar"
         jar="/home/chuross/.gradle/caches/modules-2/files-2.1/org.sonatype.sisu.inject/cglib/2.2.1-v20090111/7ce5e983fd0e6c78346f4c9cbfa39d83049dda2/cglib-2.2.1-v20090111.jar"
@@ -127,12 +127,6 @@
         jumboMode="false"
         revision="20.0.0"
         sha1="28586dc97c525501329d9a242fc3402041e3572d"/>
-    <item
-        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/classes-73472f3402f12385e7f4913c1c3c7f51206a0acc.jar"
-        jar="/home/chuross/workspace/WeatherNews/app/build/intermediates/exploded-aar/com.github.manuelpeinado.multichoiceadapter/multichoiceadapter/3.0.0/classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="31aeeb451f3663d3d54ffaa744d05c24790e76ba"/>
     <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-afa5711b3377a173dd9ae673381ccceadc271346.jar"
         jar="/usr/local/android-sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
