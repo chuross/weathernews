@@ -5,7 +5,7 @@
     <string name="format_today">今日 %s</string>
     <string name="format_pop">降水確率 %s</string>
     <string-array name="location_add_menu">
-        <item>地域から追加する</item>
+        <item>都道府県から追加する</item>
         <item>現在位置から追加する</item>
     </string-array>
 

@@ -15,4 +15,8 @@ public class GeometricsConverter {
     public static Location convertLocation(com.chuross.weathernews.db.Location location) {
         return new Location(location.getLatitude(), location.getLongitude());
     }
+
+    public static Location convertLocation(android.location.Location location) {
+        return new Location(String.valueOf(location.getLatitude()), String.valueOf(location.getLongitude()));
+    }
 }

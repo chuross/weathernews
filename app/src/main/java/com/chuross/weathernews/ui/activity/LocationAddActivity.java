@@ -38,7 +38,8 @@ public class LocationAddActivity extends Activity {
     private void onAddActionItemClicked(int position) {
         if(position == ACTION_CHOOSE_AREA) {
             startActivity(new Intent(this, PrefectureChooseActivity.class));
-        } else {
+        } else if(position == ACTION_GPS) {
+            startActivity(new Intent(this, GpsActivity.class));
         }
     }
 }
