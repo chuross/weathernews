@@ -46,7 +46,8 @@
                     android:layout_toRightOf="@+id/temperature_max"
                     android:layout_marginTop="12sp"
                     android:textColor="@android:color/holo_red_light"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:text="℃" />
                 <View
                     android:id="@+id/divider"
                     android:layout_width="1dp"
@@ -69,7 +70,8 @@
                     android:layout_toRightOf="@+id/temperature_min"
                     android:layout_marginTop="12sp"
                     android:textColor="@android:color/holo_blue_bright"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:text="℃" />
                 <TextView
                     android:id="@+id/pop_text"
                     android:layout_width="wrap_content"
