@@ -11,8 +11,6 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
-import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.junit.Assert.assertThat;
 
 public class WeatherUndergroundApiTest extends AndroidTestCase {
@@ -32,7 +30,7 @@ public class WeatherUndergroundApiTest extends AndroidTestCase {
         assertThat(result.isSuccess(), is(true));
         assertThat(result.getResult().getResponse().getError(), nullValue());
         Location resultLocation = result.getResult().getLocation();
-        assertThat(resultLocation.getName(), is("Ota"));
+        assertThat(resultLocation.getName(), is("大田区"));
         assertThat(resultLocation.getLatitude(), is("35.540000"));
         assertThat(resultLocation.getLongitude(), is("139.770000"));
     }
@@ -44,13 +42,13 @@ public class WeatherUndergroundApiTest extends AndroidTestCase {
         assertThat(result.isSuccess(), is(true));
         assertThat(result.getResult().getResponse().getError(), nullValue());
         List<Forecastday> forecastdays = result.getResult().getForecast().getSimpleForecast().getForecastdays();
-        assertThat(forecastdays.size(), greaterThan(0));
+        assertThat(forecastdays.size() > 0, is(true));
         Forecastday forecastday = forecastdays.get(0);
         assertThat(forecastday.getConditions(), notNullValue());
         assertThat(forecastday.getDate(), notNullValue());
         assertThat(forecastday.getIconUrl(), notNullValue());
         assertThat(forecastday.getHigh(), notNullValue());
         assertThat(forecastday.getLow(), notNullValue());
-        assertThat(forecastday.getPop(), greaterThanOrEqualTo(0));
+        assertThat(forecastday.getPop() >= 0, is(true));
     }
 }

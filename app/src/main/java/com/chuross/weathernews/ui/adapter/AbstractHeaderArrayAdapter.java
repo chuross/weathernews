@@ -77,6 +77,7 @@ public abstract class AbstractHeaderArrayAdapter<H, C> extends BaseAdapter imple
         return view;
     }
 
+    @SuppressWarnings("unchecked")
     private H getHeaderItem(int position) {
         return (H) map.keySet().toArray()[getHeaderPosition(position)];
     }

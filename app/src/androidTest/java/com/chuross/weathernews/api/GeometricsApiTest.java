@@ -10,7 +10,6 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.nullValue;
-import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertThat;
 
 public class GeometricsApiTest extends AndroidTestCase {
@@ -28,7 +27,7 @@ public class GeometricsApiTest extends AndroidTestCase {
         assertThat(result.isSuccess(), is(true));
         assertThat(result.getResult().getError(), nullValue());
         List<City> cities = result.getResult().getList();
-        assertThat(cities.size(), greaterThan(0));
+        assertThat(cities.size() > 0, is(true));
     }
 
     @Test
