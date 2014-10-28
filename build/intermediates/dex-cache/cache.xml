@@ -128,6 +128,12 @@
         revision="20.0.0"
         sha1="28586dc97c525501329d9a242fc3402041e3572d"/>
     <item
+        dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/classes-73472f3402f12385e7f4913c1c3c7f51206a0acc.jar"
+        jar="/home/chuross/workspace/WeatherNews/app/build/intermediates/exploded-aar/com.github.manuelpeinado.multichoiceadapter/multichoiceadapter/3.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="31aeeb451f3663d3d54ffaa744d05c24790e76ba"/>
+    <item
         dex="/home/chuross/workspace/WeatherNews/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-afa5711b3377a173dd9ae673381ccceadc271346.jar"
         jar="/usr/local/android-sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
         jumboMode="false"

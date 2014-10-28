@@ -19,7 +19,7 @@ public class GeoLookupApi extends GetApi<GeoLookupResult> {
 
     @Override
     protected String getUrl() {
-        String baseUrl = "http://api.wunderground.com/api/b3c52ad70a84caa3/geolookup/q/%s.json";
+        String baseUrl = "http://api.wunderground.com/api/b3c52ad70a84caa3/geolookup/lang:JP/q/%s.json";
         String query = String.format(Locale.JAPAN, "%s,%s", location.getLatitude(), location.getLongitude());
         return String.format(Locale.JAPAN, baseUrl, query);
     }

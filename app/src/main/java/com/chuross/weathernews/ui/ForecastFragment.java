@@ -101,6 +101,7 @@ public class ForecastFragment extends Fragment {
         temperatureMinView.setText(String.valueOf(today.getLow().getCelsius()));
         popTextView.setText(String.format(Locale.JAPAN, getString(R.string.format_pop), String.valueOf(today.getPop())) + "%");
         conditionsView.setText(today.getConditions());
+        forecastTable.removeAllViews();
         for(int i = 1; i < forecastdays.size(); i += 3) {
             addTableRow(forecastdays.subList(i, i + 3));
         }

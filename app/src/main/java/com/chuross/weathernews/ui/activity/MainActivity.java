@@ -3,6 +3,8 @@ package com.chuross.weathernews.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuItem;
 import com.activeandroid.query.Select;
 import com.chuross.weathernews.R;
 import com.chuross.weathernews.db.Location;
@@ -19,21 +21,49 @@ public class MainActivity extends Activity {
     private TitlePageIndicator titlePageIndicator;
     @InjectView(R.id.viewpager)
     private ViewPager viewPager;
+    private TitleFragmentPagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        adapter = new TitleFragmentPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
+        viewPager.setOffscreenPageLimit(5);
+        titlePageIndicator.setViewPager(viewPager);
+        refresh();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refresh();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onMenuItemSelected(final int featureId, final MenuItem item) {
+        if(item.getItemId() == R.id.menu_list) {
+            startActivity(new Intent(this, LocationListActivity.class));
+            return true;
+        }
+        return super.onMenuItemSelected(featureId, item);
+    }
+
+    private void refresh() {
+        adapter.clear();
         List<Location> locations = new Select().from(Location.class).execute();
         if(locations.isEmpty()) {
             startActivity(new Intent(this, LocationAddActivity.class));
             return;
         }
-        TitleFragmentPagerAdapter adapter = new TitleFragmentPagerAdapter(getSupportFragmentManager());
         for(Location location : locations) {
             adapter.put(location.getName(), ForecastFragment.create(location.getId()));
         }
-        viewPager.setAdapter(adapter);
-        titlePageIndicator.setViewPager(viewPager);
     }
 }

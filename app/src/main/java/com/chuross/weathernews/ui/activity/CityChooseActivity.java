@@ -18,6 +18,7 @@ import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
+import org.apache.commons.lang3.StringUtils;
 import org.jdeferred.DoneCallback;
 import org.jdeferred.FailCallback;
 import org.jdeferred.android.AndroidExecutionScope;
@@ -54,6 +55,7 @@ public class CityChooseActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_city_choose);
+        final String prefecture = getIntent().getStringExtra(EXTRA_KEY_PREFECTURE);
         adapter = new SimpleStickyListHeadersAdapter<String, City>(getApplicationContext()) {
             @Override
             protected String getHeaderString(final String item) {
@@ -69,10 +71,9 @@ public class CityChooseActivity extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
-                registerLocation(adapter.getItem(position));
+                registerLocation(adapter.getItem(position), prefecture);
             }
         });
-        String prefecture = getIntent().getStringExtra(EXTRA_KEY_PREFECTURE);
         Future<CityResult> future = geometricsApi.cities(AsyncTask.THREAD_POOL_EXECUTOR, prefecture);
         execute(AsyncTask.SERIAL_EXECUTOR, future, AndroidExecutionScope.UI).done(new DoneCallback<CityResult>() {
             @Override
@@ -114,8 +115,8 @@ public class CityChooseActivity extends Activity {
         }));
     }
 
-    private void registerLocation(City city) {
-        Future<GeocodeResult> future = geometricsApi.geocode(AsyncTask.THREAD_POOL_EXECUTOR, city.getName());
+    private void registerLocation(City city, String prefecture) {
+        Future<GeocodeResult> future = geometricsApi.geocode(AsyncTask.THREAD_POOL_EXECUTOR, StringUtils.join(prefecture, city.getName()));
         execute(AsyncTask.SERIAL_EXECUTOR, future, AndroidExecutionScope.UI).done(new DoneCallback<GeocodeResult>() {
             @Override
             public void onDone(final GeocodeResult result) {
@@ -133,10 +134,8 @@ public class CityChooseActivity extends Activity {
         List<GeometryResult> list = result.getResult().getGeometryResults();
         if(list.isEmpty()) {
             // TODO display error
-        } else if(list.size() == 1) {
-            executeGeoLookup(GeometryResult.getLocation(list.get(0)));
         } else {
-            // TODO display dialog
+            executeGeoLookup(GeometryResult.getLocation(list.get(0)));
         }
     }
 

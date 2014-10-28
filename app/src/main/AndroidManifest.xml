@@ -21,6 +21,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.activity.LocationListActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
             android:name=".ui.activity.LocationAddActivity"
             android:configChanges="orientation|screenSize" />
         <activity
