@@ -55,6 +55,7 @@ public class GpsActivity extends Activity implements LocationListener {
             @Override
             public void onClick(final DialogInterface dialog, final int which) {
                 startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                finish();
             }
         });
         dialogFragment.show(getFragmentManager(), null);
