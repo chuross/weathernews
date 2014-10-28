@@ -138,7 +138,7 @@ public class CityChooseActivity extends Activity {
     private void onGeocodeDone(GeocodeResult result) {
         List<GeometryResult> list = result.getResult().getGeometryResults();
         if(list.isEmpty()) {
-            showToast("観測地点の追加に失敗しました。時間を置いて再度お試しいただくか、違う市町村を選択してください。", Toast.LENGTH_LONG);
+            showToast("地域の追加に失敗しました。時間を置いて再度お試しいただくか、違う市町村を選択してください。", Toast.LENGTH_LONG);
         } else {
             executeGeoLookup(GeometryResult.getLocation(list.get(0)));
         }
@@ -154,7 +154,7 @@ public class CityChooseActivity extends Activity {
         }).fail(new FailCallback<Throwable>() {
             @Override
             public void onFail(final Throwable result) {
-                showToast("観測地点の追加に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
+                showToast("地域の追加に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
             }
         });
     }
@@ -168,7 +168,7 @@ public class CityChooseActivity extends Activity {
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         } else {
-            showToast("観測地点の追加に失敗しました。既に選択した市町村が追加されている可能性があります。", Toast.LENGTH_LONG);
+            showToast("地域の追加に失敗しました。既に選択した市町村が追加されている可能性があります。", Toast.LENGTH_LONG);
         }
     }
 }

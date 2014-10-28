@@ -31,6 +31,10 @@ public class MainActivity extends Activity {
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(5);
         titlePageIndicator.setViewPager(viewPager);
+        if(new Select().from(Location.class).count() == 0) {
+            startActivity(new Intent(this, LocationAddActivity.class));
+            return;
+        }
         refresh();
     }
 
@@ -57,11 +61,8 @@ public class MainActivity extends Activity {
 
     private void refresh() {
         adapter.clear();
+        titlePageIndicator.notifyDataSetChanged();
         List<Location> locations = new Select().from(Location.class).execute();
-        if(locations.isEmpty()) {
-            startActivity(new Intent(this, LocationAddActivity.class));
-            return;
-        }
         for(Location location : locations) {
             adapter.put(location.getName(), ForecastFragment.create(location.getId()));
         }

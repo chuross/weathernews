@@ -38,16 +38,15 @@ public class GpsActivity extends Activity implements LocationListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gps);
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if(!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+        if(!locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
             showConfirmGpsSettingDialog();
         }
-        String provider = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER) ? LocationManager.NETWORK_PROVIDER : LocationManager.GPS_PROVIDER;
-        locationManager.requestSingleUpdate(provider, this, Looper.getMainLooper());
+        locationManager.requestSingleUpdate(LocationManager.NETWORK_PROVIDER, this, Looper.getMainLooper());
     }
 
     private void showConfirmGpsSettingDialog() {
         DialogFragment dialogFragment = new DialogFragmentBuilder()
-                .setMessage("GPSの設定がオフになっているため現在地点を取得できません。設定画面に移動しますか？")
+                .setMessage("GPSを利用するにはGoogle位置情報サービスのを有効にする必要があります。設定画面に移動しますか？")
                 .setPositiveText("はい")
                 .setNegativeText("いいえ")
                 .build();
@@ -55,6 +54,12 @@ public class GpsActivity extends Activity implements LocationListener {
             @Override
             public void onClick(final DialogInterface dialog, final int which) {
                 startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                finish();
+            }
+        });
+        setOnNegativeClickListener(new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(final DialogInterface dialog, final int which) {
                 finish();
             }
         });
@@ -72,7 +77,8 @@ public class GpsActivity extends Activity implements LocationListener {
         }).fail(new FailCallback<Throwable>() {
             @Override
             public void onFail(final Throwable result) {
-                showToast("観測地点の追加に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
+                showToast("地域の追加に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
+                finish();
             }
         });
     }
@@ -98,7 +104,8 @@ public class GpsActivity extends Activity implements LocationListener {
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         } else {
-            showToast("観測地点の追加に失敗しました。既に選択した市町村が追加されている可能性があります。", Toast.LENGTH_LONG);
+            showToast("地域の追加に失敗しました。既に選択した市町村が追加されている可能性があります。", Toast.LENGTH_LONG);
+            finish();
         }
     }
 
