@@ -32,7 +32,6 @@ local.properties
 # Android Studio files
 */build/
 build/*
-gradle.properties
  
 # Mac OS .DS_Store file
 .DS_Store
