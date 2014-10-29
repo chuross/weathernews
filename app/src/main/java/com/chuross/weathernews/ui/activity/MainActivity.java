@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import com.activeandroid.query.Select;
 import com.chuross.weathernews.R;
 import com.chuross.weathernews.db.Location;
-import com.chuross.weathernews.ui.fragment.ForecastFragment;
 import com.chuross.weathernews.ui.adapter.TitleFragmentPagerAdapter;
+import com.chuross.weathernews.ui.fragment.ForecastFragment;
 import com.viewpagerindicator.TitlePageIndicator;
 import roboguice.inject.InjectView;
 
@@ -17,12 +19,15 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
-    private static final int REQUEST_CODE_LOCATION_ADD = 0;
     @InjectView(R.id.titlepage_indicator)
     private TitlePageIndicator titlePageIndicator;
     @InjectView(R.id.viewpager)
     private ViewPager viewPager;
     private TitleFragmentPagerAdapter adapter;
+    @InjectView(R.id.empty)
+    private View empty;
+    @InjectView(R.id.location_add_button)
+    private Button locationAddButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +37,17 @@ public class MainActivity extends Activity {
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(5);
         titlePageIndicator.setViewPager(viewPager);
+        locationAddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                startActivity(new Intent(MainActivity.this, LocationAddActivity.class));
+            }
+        });
         if(!new Select().from(Location.class).exists()) {
-            startActivityForResult(new Intent(this, LocationAddActivity.class), REQUEST_CODE_LOCATION_ADD);
+            startActivity(new Intent(this, LocationAddActivity.class));
             return;
         }
+        empty.setVisibility(View.INVISIBLE);
         refresh();
     }
 
@@ -43,6 +55,9 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
         refresh();
+        if(!new Select().from(Location.class).exists()) {
+            empty.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -58,17 +73,6 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode != REQUEST_CODE_LOCATION_ADD) {
-            return;
-        }
-        if(new Select().from(Location.class).count() == 0) {
-            finish();
-        }
     }
 
     private void refresh() {
