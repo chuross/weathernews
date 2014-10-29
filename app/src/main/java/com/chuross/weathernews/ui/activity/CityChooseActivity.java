@@ -93,7 +93,7 @@ public class CityChooseActivity extends Activity {
     }
 
     private void onCitiesDone(CityResult result) {
-        if(result == null || !result.isSuccess()) {
+        if(isFinishing() || result == null || !result.isSuccess()) {
             showToast("市町村の取得に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
             return;
         }
@@ -147,7 +147,7 @@ public class CityChooseActivity extends Activity {
     }
 
     private void onGeocodeDone(GeocodeResult result) {
-        if(result == null || !result.isSuccess()) {
+        if(isFinishing() || result == null || !result.isSuccess()) {
             showToast("地域の追加に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
             return;
         }
@@ -175,7 +175,7 @@ public class CityChooseActivity extends Activity {
     }
 
     private void onGeoLookupDone(GeoLookupResult result) {
-        if(result == null || !result.isSuccess()) {
+        if(isFinishing() || result == null || !result.isSuccess()) {
             showToast("地域の追加に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
             return;
         }

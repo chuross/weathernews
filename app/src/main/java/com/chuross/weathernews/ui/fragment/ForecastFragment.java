@@ -96,7 +96,7 @@ public class ForecastFragment extends Fragment {
     }
 
     private void onForecastListDone(ForecastListResult result) {
-        if(result == null || !result.isSuccess()) {
+        if(isDetached() || result == null || !result.isSuccess()) {
             error.setVisibility(View.VISIBLE);
             return;
         }
