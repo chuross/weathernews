@@ -31,12 +31,22 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            keyAlias 'weather_news'
+            keyPassword KEY_PASSWORD
+            storeFile file('../weather_news.jks')
+            storePassword STORE_PASSWORD
+        }
+    }
+
     buildTypes {
         release {
             runProguard false
             debuggable false
             zipAlign true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 
