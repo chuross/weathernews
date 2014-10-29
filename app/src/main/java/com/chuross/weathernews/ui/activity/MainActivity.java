@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import com.activeandroid.query.Select;
 import com.chuross.weathernews.R;
 import com.chuross.weathernews.db.Location;
-import com.chuross.weathernews.ui.ForecastFragment;
+import com.chuross.weathernews.ui.fragment.ForecastFragment;
 import com.chuross.weathernews.ui.adapter.TitleFragmentPagerAdapter;
 import com.viewpagerindicator.TitlePageIndicator;
 import roboguice.inject.InjectView;
@@ -17,6 +17,7 @@ import java.util.List;
 
 public class MainActivity extends Activity {
 
+    private static final int REQUEST_CODE_LOCATION_ADD = 0;
     @InjectView(R.id.titlepage_indicator)
     private TitlePageIndicator titlePageIndicator;
     @InjectView(R.id.viewpager)
@@ -32,7 +33,7 @@ public class MainActivity extends Activity {
         viewPager.setOffscreenPageLimit(5);
         titlePageIndicator.setViewPager(viewPager);
         if(new Select().from(Location.class).count() == 0) {
-            startActivity(new Intent(this, LocationAddActivity.class));
+            startActivityForResult(new Intent(this, LocationAddActivity.class), REQUEST_CODE_LOCATION_ADD);
             return;
         }
         refresh();
@@ -57,6 +58,17 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onMenuItemSelected(featureId, item);
+    }
+
+    @Override
+    protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode != REQUEST_CODE_LOCATION_ADD) {
+            return;
+        }
+        if(new Select().from(Location.class).count() == 0) {
+            finish();
+        }
     }
 
     private void refresh() {

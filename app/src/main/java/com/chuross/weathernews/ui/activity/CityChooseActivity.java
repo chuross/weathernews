@@ -26,8 +26,7 @@ import org.jdeferred.android.AndroidExecutionScope;
 import roboguice.inject.InjectView;
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.Future;
 
 public class CityChooseActivity extends Activity {
@@ -81,6 +80,7 @@ public class CityChooseActivity extends Activity {
         }).fail(new FailCallback<Throwable>() {
             @Override
             public void onFail(final Throwable result) {
+                showToast("市町村の取得に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
             }
         }).always(new AlwaysCallback<CityResult, Throwable>() {
             @Override
@@ -92,6 +92,7 @@ public class CityChooseActivity extends Activity {
 
     private void onCitiesDone(CityResult result) {
         if(result == null || !result.isSuccess()) {
+            showToast("市町村の取得に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
             return;
         }
         List<City> cities = result.getResult().getList();
@@ -110,12 +111,20 @@ public class CityChooseActivity extends Activity {
     }
 
     private List<City> filterCities(List<City> cities, final List<Character> patterns) {
-        return Lists.newArrayList(Collections2.filter(cities, new Predicate<City>() {
+        Collection<City> filteredCities = Collections2.filter(cities, new Predicate<City>() {
             @Override
             public boolean apply(final City input) {
                 return patterns.contains(input.getNameKana().charAt(0));
             }
-        }));
+        });
+        List<City> result = Lists.newArrayList(new HashSet<City>(filteredCities));
+        Collections.sort(result, new Comparator<City>() {
+            @Override
+            public int compare(final City lhs, final City rhs) {
+                return lhs.getNameKana().compareTo(rhs.getNameKana());
+            }
+        });
+        return result;
     }
 
     private void registerLocation(City city, String prefecture) {
@@ -136,6 +145,10 @@ public class CityChooseActivity extends Activity {
     }
 
     private void onGeocodeDone(GeocodeResult result) {
+        if(result == null || !result.isSuccess()) {
+            showToast("地域の追加に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
+            return;
+        }
         List<GeometryResult> list = result.getResult().getGeometryResults();
         if(list.isEmpty()) {
             showToast("地域の追加に失敗しました。時間を置いて再度お試しいただくか、違う市町村を選択してください。", Toast.LENGTH_LONG);
@@ -160,6 +173,10 @@ public class CityChooseActivity extends Activity {
     }
 
     private void onGeoLookupDone(GeoLookupResult result) {
+        if(result == null || !result.isSuccess()) {
+            showToast("地域の追加に失敗しました。時間を置いて再度お試しください。", Toast.LENGTH_LONG);
+            return;
+        }
         Location location = result.getResult().getLocation();
         Date now = provider.now();
         com.chuross.weathernews.db.Location model = new com.chuross.weathernews.db.Location(location.getName(), location.getLatitude(), location.getLongitude(), now, now);

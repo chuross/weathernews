@@ -1,6 +1,5 @@
 package com.chuross.weathernews.api;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
@@ -31,15 +30,15 @@ public class City {
 
     @Override
     public boolean equals(final Object o) {
-        if(!(o instanceof City)) {
+        if(o == null || !(o instanceof City)) {
             return false;
         }
         City that = (City) o;
-        return new EqualsBuilder().append(that.getName(), name).append(that.getNameKana(), nameKana).build();
+        return that.getName().equals(name);
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(name).append(nameKana).build();
+        return new HashCodeBuilder().append(name).build();
     }
 }

@@ -1,4 +1,4 @@
-package com.chuross.weathernews.ui;
+package com.chuross.weathernews.ui.fragment;
 
 import com.chuross.weathernews.ui.activity.Activity;
 import roboguice.fragment.RoboFragment;

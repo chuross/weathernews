@@ -1,4 +1,4 @@
-package com.chuross.weathernews.ui;
+package com.chuross.weathernews.ui.fragment;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -71,6 +71,7 @@ public class ForecastFragment extends Fragment {
         initView();
         long id = getArguments().getLong(ARGUMENT_KEY_IDENTITY, -1);
         if(id == -1) {
+            progress.setVisibility(View.INVISIBLE);
             error.setVisibility(View.VISIBLE);
             return;
         }
@@ -95,6 +96,10 @@ public class ForecastFragment extends Fragment {
     }
 
     private void onForecastListDone(ForecastListResult result) {
+        if(result == null || !result.isSuccess()) {
+            error.setVisibility(View.VISIBLE);
+            return;
+        }
         List<Forecastday> forecastdays = result.getResult().getForecast().getSimpleForecast().getForecastdays();
         Forecastday today = forecastdays.get(0);
         todayDateTextView.setText(String.format(Locale.JAPAN, getString(R.string.format_today), DATE_FORMAT.format(today.getDate().getEpoch())));
