@@ -6,9 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import com.activeandroid.query.Select;
 import com.chuross.weathernews.R;
-import com.chuross.weathernews.db.Location;
 import com.chuross.weathernews.ui.adapter.SimpleListAdapter;
 import roboguice.inject.InjectView;
 
@@ -23,7 +21,7 @@ public class LocationAddActivity extends Activity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_add);
-        getActionBar().setDisplayHomeAsUpEnabled(new Select().from(Location.class).exists());
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         final String[] menu = getResources().getStringArray(R.array.location_add_menu);
         listView.setAdapter(new SimpleListAdapter<String>(getApplicationContext(), menu) {
             @Override
