@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(5);
         titlePageIndicator.setViewPager(viewPager);
-        if(new Select().from(Location.class).count() == 0) {
+        if(!new Select().from(Location.class).exists()) {
             startActivityForResult(new Intent(this, LocationAddActivity.class), REQUEST_CODE_LOCATION_ADD);
             return;
         }
@@ -52,12 +52,12 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    public boolean onMenuItemSelected(final int featureId, final MenuItem item) {
+    public boolean onOptionsItemSelected(final MenuItem item) {
         if(item.getItemId() == R.id.menu_list) {
             startActivity(new Intent(this, LocationListActivity.class));
             return true;
         }
-        return super.onMenuItemSelected(featureId, item);
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

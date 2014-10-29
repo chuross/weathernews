@@ -3,6 +3,7 @@ package com.chuross.weathernews.ui.activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Toast;
@@ -51,6 +52,7 @@ public class CityChooseActivity extends Activity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_city_choose);
         final String prefecture = getIntent().getStringExtra(EXTRA_KEY_PREFECTURE);
         adapter = new SimpleStickyListHeadersAdapter<String, City>(getApplicationContext()) {
@@ -187,5 +189,14 @@ public class CityChooseActivity extends Activity {
         } else {
             showToast("地域の追加に失敗しました。既に選択した市町村が追加されている可能性があります。", Toast.LENGTH_LONG);
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        if(item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

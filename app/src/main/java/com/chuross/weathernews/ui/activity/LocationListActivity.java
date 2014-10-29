@@ -2,6 +2,7 @@ package com.chuross.weathernews.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewParent;
 import android.widget.*;
@@ -24,6 +25,7 @@ public class LocationListActivity extends Activity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_location_list);
         List<Location> locations = new Select().from(Location.class).execute();
         adapter = new AbstractArrayAdapter<Location>(getApplicationContext(), locations) {
@@ -64,5 +66,14 @@ public class LocationListActivity extends Activity {
         }
         location.delete();
         adapter.remove(location);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        if(item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

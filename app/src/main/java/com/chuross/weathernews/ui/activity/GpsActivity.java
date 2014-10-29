@@ -11,6 +11,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Looper;
 import android.provider.Settings;
+import android.view.MenuItem;
 import android.widget.Toast;
 import com.chuross.common.android.library.ui.dialog.DialogFragmentBuilder;
 import com.chuross.weathernews.R;
@@ -36,6 +37,7 @@ public class GpsActivity extends Activity implements LocationListener {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_gps);
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if(!locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
@@ -107,6 +109,15 @@ public class GpsActivity extends Activity implements LocationListener {
             showToast("地域の追加に失敗しました。既に選択した市町村が追加されている可能性があります。", Toast.LENGTH_LONG);
             finish();
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        if(item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.chuross.weathernews.ui.activity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import com.chuross.weathernews.R;
@@ -21,6 +22,7 @@ public class PrefectureChooseActivity extends Activity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_prefecture);
         adapter = new SimpleStickyListHeadersAdapter<Area, String>(getApplicationContext(), getPrefectureMap()) {
             @Override
@@ -53,5 +55,14 @@ public class PrefectureChooseActivity extends Activity {
         map.putAll(Area.SHIKOKU, Prefectures.getPrefectures(getApplicationContext(), Area.SHIKOKU));
         map.putAll(Area.KYUSHU, Prefectures.getPrefectures(getApplicationContext(), Area.KYUSHU));
         return map;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        if(item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
